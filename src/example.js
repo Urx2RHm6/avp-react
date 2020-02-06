@@ -1,58 +1,81 @@
-import React, { Component } from 'react'
-import { Form } from 'semantic-ui-react'
-
-const options = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
-  { key: 'o', text: 'Other', value: 'other' },
-]
+import React, { Component } from "react";
+import { Form, Grid, Table } from "semantic-ui-react";
 
 class FormExampleSubcomponentControl extends Component {
-  state = {}
+  state = {};
 
-  handleChange = (e, { value }) => this.setState({ value })
+  handleChange = (e, { value }) => this.setState({ value });
 
   render() {
-    const { value } = this.state
+    const { value } = this.state;
     return (
       <Form>
-        <Form.Group widths='equal'>
-          <Form.Input fluid label='First name' placeholder='First name' />
-          <Form.Input fluid label='Last name' placeholder='Last name' />
-          <Form.Select
-            fluid
-            label='Gender'
-            options={options}
-            placeholder='Gender'
-          />
-        </Form.Group>
-        <Form.Group inline>
-          <label>Size</label>
-          <Form.Radio
-            label='Small'
-            value='sm'
-            checked={value === 'sm'}
-            onChange={this.handleChange}
-          />
-          <Form.Radio
-            label='Medium'
-            value='md'
-            checked={value === 'md'}
-            onChange={this.handleChange}
-          />
-          <Form.Radio
-            label='Large'
-            value='lg'
-            checked={value === 'lg'}
-            onChange={this.handleChange}
-          />
-        </Form.Group>
-        <Form.TextArea label='About' placeholder='Tell us more about you...' />
-        <Form.Checkbox label='I agree to the Terms and Conditions' />
-        <Form.Button>Submit</Form.Button>
+        <Grid divided>
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Grid.Row>
+                <Form.Field>
+                  <label />
+                  <input placeholder="Company" />
+                </Form.Field>
+              </Grid.Row>
+              <Grid.Row>
+                <Form.Field>
+                  <label />
+                  <input placeholder="Well" />
+                </Form.Field>
+              </Grid.Row>
+              <Grid.Row>
+                <Form.Field>
+                  <label />
+                  <input placeholder="State" />
+                </Form.Field>
+                <Form.Field>
+                  <label />
+                  <input placeholder="Country" />
+                </Form.Field>
+              </Grid.Row>
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <Table celled>
+                <Table.Header>
+                  <Table.Row>
+                    <Table.HeaderCell> </Table.HeaderCell>
+                    <Table.HeaderCell>Gauges</Table.HeaderCell>
+                    <Table.HeaderCell>Tank #</Table.HeaderCell>
+                  </Table.Row>
+                </Table.Header>
+              </Table>
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <Grid.Row>
+                <Form.Field>
+                  <label />
+                  <input placeholder="Date" />
+                </Form.Field>
+              </Grid.Row>
+              <Grid.Row>
+                <Form.Field>
+                  <label />
+                  <input placeholder="Disposal" />
+                </Form.Field>
+              </Grid.Row>
+              <Grid.Row>
+                <Form.Field>
+                  <label />
+                  <input placeholder="Truck" />
+                </Form.Field>
+                <Form.Field>
+                  <label />
+                  <input placeholder="Hours" />
+                </Form.Field>
+              </Grid.Row>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Form>
-    )
+    );
   }
 }
 
-export default FormExampleSubcomponentControl
+export default FormExampleSubcomponentControl;
