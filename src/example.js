@@ -12,7 +12,7 @@ class FormExampleSubcomponentControl extends Component {
       <Form>
         <Grid>
           <Grid.Row>
-            <Grid.Column width={3}>
+            <Grid.Column width={5}>
               <Grid.Row>
                 <Form.Field>
                   <label />
